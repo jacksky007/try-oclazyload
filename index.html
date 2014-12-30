@@ -1,0 +1,41 @@
+<div oc-lazy-load="{name: 'HeaderModule', files: ['js/HeaderModule.js']}">
+<header my-header headerName="abc">
+  <p>header name: {{headerName}}</p>
+  <p>header value: {{headerValue}}</p>
+</header>
+</div>
+<div ng-controller="ContentController">
+  Name: <input ng-model="name">
+  <p>Hello {{name}}</p>
+</div>
+<div oc-lazy-load="{name: 'FooterModule', files: ['js/FooterModule.js']}">
+<footer>
+  <header my-header footerName="abc">
+    <p>footer name: {{footerName}}</p>
+    <p>footer value: {{footerValue}}</p>
+  </header>
+  </div>
+</footer>
+<div>
+
+<script src="bower_components/requirejs/require.js"></script>
+<script>
+require.config({
+  paths: {
+    angular: 'bower_components/angular/angular',
+    ocLazyLoad: 'bower_components/oclazyload/dist/ocLazyLoad'
+  },
+  shim: {
+    ocLazyLoad: ['angular']
+  }
+})
+require(['angular', 'ocLazyLoad'], function() {
+  var app = angular.module('app', ['oc.lazyLoad'])
+
+  app.controller('ContentController', ['$scope', function($scope) {
+
+  }])
+
+  angular.bootstrap(document.body, ['app'])
+})
+</script>

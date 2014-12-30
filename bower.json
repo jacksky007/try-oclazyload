@@ -1,0 +1,21 @@
+{
+  "name": "try-oclazyload",
+  "version": "0.0.0",
+  "authors": [
+    "jacksky007 <jacksky007@qq.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2",
+    "oclazyload": "~0.5.1",
+    "requirejs": "~2.1.15",
+    "angular-ui-router": "~0.2.13"
+  }
+}
